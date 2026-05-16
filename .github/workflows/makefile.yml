@@ -4,19 +4,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        run: git clone --depth 1 https://github.com/${{ github.repository }}.git .
-
+      - uses: actions/checkout@v3
       - name: Setup Theos
         run: |
           rm -rf /opt/theos
           git clone --depth 1 https://github.com/theos/theos.git /opt/theos
           git clone --depth 1 https://github.com/theos/sdks.git /opt/theos/sdks
           echo "THEOS=/opt/theos" >> $GITHUB_ENV
-
       - name: Build Package
         run: make package FINALPACKAGE=1
-
       - uses: actions/upload-artifact@v4
         with:
           name: deb-package
