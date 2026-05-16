@@ -1,0 +1,8 @@
+Package: com.xiufulottie.tweak
+Name: Lottiefix123
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: 这是一个Tweak插件
+Maintainer: DaiDai
+Author: DaiDai
+Section: Tweaks
